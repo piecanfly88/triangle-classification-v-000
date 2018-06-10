@@ -17,7 +17,15 @@ class Triangle
     else
       :scalene
     end
-  end
+  end 
+
+  def valid?
+    if s1 + s2 < s3 || s1 + s3 < s2 || s2 + s3 < s1 || s1 + s2 + s3 == 0
+      raise TriangleError
+    else
+      true
+    end
+  end  
 
 
   class TriangleError < StandardError
