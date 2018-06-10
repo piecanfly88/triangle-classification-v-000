@@ -3,9 +3,6 @@ class Triangle
 
   def initialize(triangle)
     triangle.each{|key, value| self.send("#{key}=", value)}
-    if s1 + s2 < s3 || s1 + s3 < s2 || s2 + s3 < s1 || s1 + s2 + s3 == 0
-      raise TriangleError
-    end
   end
 
   def kind
@@ -25,7 +22,7 @@ class Triangle
     else
       true
     end
-  end  
+  end
 
 
   class TriangleError < StandardError
